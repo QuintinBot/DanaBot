@@ -35,6 +35,7 @@ client.on("ready", async () => {
     console.log(`${client.user.username} is online.`);
  
     client.user.setActivity("-help", { type: "PLAYING" });
+    client.user.setStatus("Hey, Pieter Knolraap is een Bot van Knolraap Army! \n Gemaakt door Quintin#1000")
  
 });
 
