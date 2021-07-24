@@ -100,7 +100,7 @@ client.on("messageDelete", messageDeleted => {
         .setTimestamp()
         .setColor("ORANGE");
 //Naam van het kanaal
-    client.channels.cache.find(c => c.name == "log").send(embed);
+    client.channels.cache.find(c => c.name == "logs").send(embed);
 
 
 });
