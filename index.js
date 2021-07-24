@@ -85,4 +85,24 @@ client.on("message", async message => {
 
 });
 
+client.on("messageDelete", messageDeleted => {
+
+    if(messageDeleted.author.bot) return;
+
+    var content = messageDeleted.content;
+    if(!content) content = "Geen bericht gevonden.";
+
+    var respone = `Bericht ${messageDeleted.id} is verwijderd uit ${messageDeleted.channel}\n **Bericht:** ${content}`;
+
+    var embed = new discord.MessageEmbed()
+        .setAuthor(`${messageDeleted.author.id} ${messageDeleted.author.tag}`, `${messageDeleted.author.avatarURL({size: 4096})}`)
+        .setDescription(respone)
+        .setTimestamp()
+        .setColor("ORANGE");
+//Naam van het kanaal
+    client.channels.cache.find(c => c.name == "log").send(embed);
+
+
+});
+
 client.login(process.env.token);
