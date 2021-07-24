@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`Reason: ${reason}`)
     .setColor("RANDOM")
     .setTimestamp()
-    .setFooter(bot.user.tag, bot.user.displayAvatarURL())
+    .setFooter(bot.user.tag, client.user.displayAvatarURL())
 
     if (!args[0]) return message.channel.send("You need to specify a user to kick");
 
