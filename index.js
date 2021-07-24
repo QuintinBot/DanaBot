@@ -51,13 +51,28 @@ client.on("messageUpdate", async(oldMessage, newMessage) => {
     client.channels.cache.get('866393131732959253').send;
 });
 
- 
- 
+var swearWords = ["Ok", "ok", "oK"];
+
 client.on("message", async message => {
  
     if(message.author.bot) return;
  
     if(message.channel.type === "dm") return;
+
+    var msg = message.content.toLowerCase();
+
+    for (let i = 0; i < swearWords.length; i++) {
+
+        if(msg.includes(swearWords[i])){
+
+            message.delete();
+
+            return message.reply("Niet **Okken** jij!").then(msg => msg.delete({timeout: 3000}));
+
+        }
+
+    }
+    
 
     var prefixes = JSON.parse(fs.readFileSync("./prefixes.json"));
 
