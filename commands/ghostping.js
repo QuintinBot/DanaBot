@@ -1,8 +1,4 @@
 const { MessageEmbed } = require('discord.js')
-module.exports = {
-    name : 'gping',
-    category : 'info',
-    description : 'Returns latency and API ping',
 
     /**
      * @param {Client} client
@@ -19,4 +15,10 @@ module.exports = {
             msg.delete()
 
     }
+
+
+module.exports.help = {
+    name : 'gping',
+    category : 'info',
+    description : 'Returns latency and API ping',
 }
