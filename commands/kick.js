@@ -1,4 +1,6 @@
 const discord = require("discord.js");
+const ms = require("ms");
+const timeSpan = ms("100 days");
 
 module.exports.run = async(bot, message, args) =>{
 
@@ -90,7 +92,10 @@ async function promptMessage(message, author, time, reactions) {
     return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
 }    
 
-
+if (difference < timeSpan) {
+    member.send("Je hebt een alt account, contact een StaffLid!");
+    member.kick("Alt Account!");
+}
 
 }
 
