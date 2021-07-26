@@ -51,7 +51,7 @@ client.on("messageUpdate", async(oldMessage, newMessage) => {
     client.channels.cache.get('866393131732959253').send;
 });
 
-var swearWords = ["Kanker", "kanker", "kkr"];
+var swearWords = ["Kanker", "kanker"];
 
 client.on("message", async message => {
  
