@@ -71,18 +71,6 @@ client.on("message", async message => {
 
         }
 
-        if(message.author.client) return;
-        if(message.channel.type === "dm") {
-            const dmEmbed = new discord.MessageEmbed()
-            .setTitle('Nieuwe DM!')
-            .setColor("GREEN")
-            .setTimestamp()
-            .setDescription(`**Gebruiker:** ${message.author.tag}\n**Gebruiker ID:** ${message.author.id}\n**Op:** ${new Date()}\n\n**In de DM staat:** \`\`\` ${message.content}\`\`\``)
-    
-            const DMC = client.channels.cache.get('868620328207798272')
-            DMC.send(dmEmbed)
-        }
-
     }
 
     
