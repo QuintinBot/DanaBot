@@ -51,7 +51,7 @@ client.on("messageUpdate", async(oldMessage, newMessage) => {
     client.channels.cache.get('866393131732959253').send;
 });
 
-// var swearWords = ["Ok", "ok", "oK"];
+var swearWords = ["Kanker", "kanker", "kkr"];
 
 client.on("message", async message => {
  
@@ -61,17 +61,17 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
-    // for (let i = 0; i < swearWords.length; i++) {
+    for (let i = 0; i < swearWords.length; i++) {
 
-    //     if(msg.includes(swearWords[i])){
+        if(msg.includes(swearWords[i])){
 
-    //         message.delete();
+            message.delete();
 
-    //         return message.reply("Niet **Okken** jij!").then(msg => msg.delete({timeout: 3000}));
+            return message.reply("Niet schelden aub!").then(msg => msg.delete({timeout: 3000}));
 
-    //     }
+        }
 
-    // }
+    }
     
 
     var prefixes = JSON.parse(fs.readFileSync("./prefixes.json"));
