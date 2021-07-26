@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 
-    run : async(client, message, args) => {
+module.exports.run = async(client, message, args) => {
         const msg = await message.channel.send(`🏓 Pinging...`)
         const embed = new MessageEmbed()
             .setTitle('Pong!')
