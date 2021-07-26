@@ -5,10 +5,21 @@ module.exports.run = async(bot, message, args) =>{
         if(target){
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.ban();
-            message.channel.send("User has been banned");
+            message.channel.send("Gebruiker is verbannen!");
         }else{
-            message.channel.send(`You coudn't ban that member!`);
+            message.channel.send(`Je kan deze gebruiker niet bannen!`);
+
+
+            var embed = new discord.MessageEmbed()
+            .setColor("#ff0000")
+            .setThumbnail(banUser.user.displayAvatarURL)
+            .setFooter(message.member.displayName, message.author.displayAvatarURL)
+            .setTimestamp()
+            .setDescription(`** Verbannen:** ${banUser} (${banUser.id})
+            **Verbannen door:** ${message.author}
+            **Redenen: ** ${reason}`);
         }
+    
     }
 
 module.exports.help = {
