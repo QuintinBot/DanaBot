@@ -34,7 +34,7 @@ client.on("ready", async () => {
  
     console.log(`${client.user.username} is online.`);
  
-    client.user.setActivity("-help", { type: "DEVELOPER" });
+    client.user.setActivity("-help", { type: "PLAYING" });
  
 });
 
