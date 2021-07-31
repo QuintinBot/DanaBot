@@ -30,13 +30,13 @@ fs.readdir("./commands/" , (err, files) => {
 
 });
  
-client.on("ready", async () => {
+// client.on("ready", async () => {
  
-    console.log(`${client.user.username} is online.`);
+//     console.log(`${client.user.username} is online.`);
  
-    client.user.setActivity("-help", { type: "PLAYING" });
+//     client.user.setActivity("-help", { type: "PLAYING" });
  
-});
+// });
 
 client.on("messageUpdate", async(oldMessage, newMessage) => {
 
