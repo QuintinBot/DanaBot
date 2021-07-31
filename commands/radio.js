@@ -32,6 +32,10 @@ module.exports.run = async (client, message, args) => {
     let stream = radio.Radio.getStream(streamUrl,{pulsator:true}) //generates pulsator effect
 
 
+
+module.exports.run = async (client, message, args) => {
+
+
 }
 
 module.exports.help = {
