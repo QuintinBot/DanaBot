@@ -4,9 +4,9 @@ const timeSpan = ms("100 days");
 
 module.exports.run = async(bot, message, args) =>{
 
-    // if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
  
-    // if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
 
     if (!args[1]) return message.reply("Geen gebruiker opgegeven.");
 
@@ -91,11 +91,6 @@ async function promptMessage(message, author, time, reactions) {
     // Dan kunnen we bericht terug sturen met dat icoontje dat is aangeduid.
     return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
 }    
-
-if (difference < timeSpan) {
-    member.send("Je hebt een alt account, contact een StaffLid!");
-    member.kick("Alt Account!");
-}
 
 }
 
