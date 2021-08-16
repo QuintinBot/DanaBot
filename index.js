@@ -57,7 +57,7 @@ client.on("guildMemberAdd", member => {
  
     channel.send(`Welcome by **Sluts From Dana**!, ${member}`);
  
-});
+})
 
 
 client.on("messageUpdate", async(oldMessage, newMessage) => {
