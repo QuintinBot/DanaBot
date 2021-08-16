@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
 
         mutePerson.roles.remove(muteRole.id);
 
-        message.channel.send(`${mutePerson} is muted`);
+        message.channel.send(`${mutePerson} is unmuted`);
 
     }, ms(muteTime));
 
