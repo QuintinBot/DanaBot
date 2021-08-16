@@ -158,8 +158,7 @@ function RandomXp(message) {
         var embedLevel = new discord.MessageEmbed()
         .setDescription("**Level Up!**")
         .setColor("PINK")
-        .setField("Nieuw Level: ", levelFile[idUser].level)
-        .setFooter();
+        .setField("New Level: ", levelFile[idUser].level);
         message.channel.send(embedLevel);
 
     }
