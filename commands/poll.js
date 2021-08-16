@@ -7,10 +7,10 @@ module.exports.run = async (bot, message, args) => {
     if (!args[0]) return message.reply("Geen poll meegegeven..");
 
     const embed = new discord.MessageEmbed()
-    .setTitle('Nieuwe Poll!')
+    .setTitle('New Poll!')
     .setColor('#d18cd7')
     .setDescription(args.join(" "))
-    .setFooter('Stem hieronder')
+    .setFooter('Vote below')
     .setTimestamp()
 
 var msg = await message.channel.send(embed);

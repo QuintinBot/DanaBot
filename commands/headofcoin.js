@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 
     var result = value[Math.floor(Math.random() * value.length)];
 
-    message.channel.send(`its's **${result}**, !`);
+    message.channel.send(`its's.. **${result}**!`);
 
 }
 
