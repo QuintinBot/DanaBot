@@ -1,5 +1,5 @@
 {
-    "host":"localhost",
+    "host":"Heroku",
     "user": "root",
     "password": "",
     "database": "rollendan"
