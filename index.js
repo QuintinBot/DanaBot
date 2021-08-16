@@ -44,14 +44,14 @@ client.on("messageUpdate", async(oldMessage, newMessage) => {
 
     var embed = new discord.MessageEmbed()
     .setAuthor(`${newMessage.author.tag} (${newMessage.author.id})`, newMessage.author.avatarURL({size: 4096}))
-    .setDescription(`Bericht ${newMessage.id} is bewerkt in ${newMessage.channel}\n **Voor:** ${oldMessage.content}\n **Nu:** ${newMessage.content}`)
+    .setDescription(` ${newMessage.id} has been edited in ${newMessage.channel}\n **Before:** ${oldMessage.content}\n **Now:** ${newMessage.content}`)
     .setTimestamp()
     .setColor("GREEN")
 
-    client.channels.cache.get('866393131732959253').send;
+    client.channels.cache.get('876591446302531584').send;
 });
 
-var swearWords = ["Kanker", "kanker"];
+var swearWords = ["Kanker", "kanker", "cancer"];
 
 client.on("message", async message => {
  
@@ -67,7 +67,7 @@ client.on("message", async message => {
 
             message.delete();
 
-            return message.reply("Niet schelden aub!").then(msg => msg.delete({timeout: 3000}));
+            return message.reply("Don't swear please!").then(msg => msg.delete({timeout: 3000}));
 
         }
 
@@ -108,7 +108,7 @@ client.on("messageDelete", messageDeleted => {
     var content = messageDeleted.content;
     if(!content) content = "Geen bericht gevonden.";
 
-    var respone = `Bericht ${messageDeleted.id} is verwijderd uit ${messageDeleted.channel}\n **Bericht:** ${content}`;
+    var respone = `Message ${messageDeleted.id} has deleted in ${messageDeleted.channel}\n **Message:** ${content}`;
 
     var embed = new discord.MessageEmbed()
         .setAuthor(`${messageDeleted.author.id} ${messageDeleted.author.tag}`, `${messageDeleted.author.avatarURL({size: 4096})}`)
@@ -116,7 +116,7 @@ client.on("messageDelete", messageDeleted => {
         .setTimestamp()
         .setColor("ORANGE");
 //Naam van het kanaal
-    client.channels.cache.find(c => c.name == "logs").send(embed);
+    client.channels.cache.find(c => c.name == "ʟᴏɢꜱ").send(embed);
 
 
 });
