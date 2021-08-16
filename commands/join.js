@@ -4,15 +4,15 @@ module.exports.run = async (client, message, args) => {
 
     bot.on("guildMemberAdd", member => {
  
-        const channel = member.guild.channels.find("name", "report");
-        if (!channel) console.log("Kan het kanaal niet vinden.");
+        const channel = member.guild.channels.find("ʟᴏɢꜱ", "ᴡᴇʟᴋᴏᴍッ");
+        if (!channel) console.log("Can't find this channel.");
      
         var joinEmbed = new discord.RichEmbed()
             .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-            .setDescription(`Hoi ${member.user.username}, **Welkom op de server**. Hier nog meer uitleg.`)
+            .setDescription(`Hey ${member.user.username}, **Welcome by the **Sluts From Dana**.`)
             .setColor("#00FF00")
             .setTimestamp()
-            .setFooter("Gebruiker gejoined.");
+            .setFooter("User joined.");
      
         channel.send(joinEmbed);
      

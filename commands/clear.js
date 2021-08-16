@@ -16,22 +16,22 @@ if (Number.isInteger(parseInt(args[0]))) {
 
         if (args[0] == 0) {
 
-            message.reply(`Ben je dom? Ik kan toch niet 0 berichten verwijderen?`).then(msg => msg.delete({timeout: 3000}));
+            message.reply(`U dumb? I can't delete **0** message's?`).then(msg => msg.delete({timeout: 3000}));
         
         } else if (args[0] == 1) {
         
-            message.reply(`Ik heb 1 bericht verwijderd.`).then(msg => msg.delete({timeout: 3000}));
+            message.reply(`I deleted 1 message's.`).then(msg => msg.delete({timeout: 3000}));
         
         } else {
         
-            message.reply(`Ik heb ${args[0]} berichten verwijderd.`).then(msg => msg.delete({timeout: 3000}));
+            message.reply(`I deleted ${args[0]} message's.`).then(msg => msg.delete({timeout: 3000}));
         
         }
 
     });
 
 } else {
-    return message.reply("Geef een getal op.");
+    return message.reply("Enter a number.");
 }
 
 }

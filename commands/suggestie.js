@@ -2,11 +2,11 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    const channel = message.guild.channels.cache.find(ch => ch.name === "algemeen");
-    if(!channel) message.reply("Kanaal niet gevonden : (");
+    const channel = message.guild.channels.cache.find(ch => ch.name === "ꜱᴜɢɢᴇꜱᴛɪᴇ");
+    if(!channel) message.reply("Can't find the channel.");
 
     var argsBericht = args.join(" ");
-    if(!argsBericht) return message.reply("Geef een suggestie op.");
+    if(!argsBericht) return message.reply("Give a suggestie.");
 
     var embed = new discord.MessageEmbed()
     .setDescription(argsBericht)

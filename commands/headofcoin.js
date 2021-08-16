@@ -1,13 +1,13 @@
 module.exports.run = async (client, message, args) => {
 
-    var value = ["kop", "munt"];
+    var value = ["head", "coin"];
 
     var result = value[Math.floor(Math.random() * value.length)];
 
-    message.channel.send(`Ik heb **${result}** in gedachten!`);
+    message.channel.send(`its's **${result}**, !`);
 
 }
 
 module.exports.help = {
-    name: "kopofmunt"
+    name: "headofcoin"
 }

@@ -1,6 +1,6 @@
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry, jij kan dit niet");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry, you can't do this!");
 
     await message.channel.overwritePermissions([
 
@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 
     ]);
 
-    message.channel.send("**UNLOCK**! Dit kanaal is weer open voor iedereen!")
+    message.channel.send("**UNLOCK**! This cannel has opened again!")
 
 }
 

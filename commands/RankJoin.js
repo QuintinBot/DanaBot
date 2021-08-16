@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
     client.on("guildMemberAdd", member => {
  
         // Rol vinden
-        var role = member.guild.roles.cache.get('868507144947912754');
+        var role = member.guild.roles.cache.get('876578388226215996');
      
         if (!role) return;
      
@@ -13,11 +13,11 @@ module.exports.run = async (client, message, args) => {
         member.roles.add(role);
      
         // Welkom kanaal.
-        const channel = member.guild.channels.cache.get('866362598789873686');
+        const channel = member.guild.channels.cache.get('848743794157420607');
      
         if (!channel) return;
      
-        channel.send(`Welkom op de server, ${member}`);
+        channel.send(`Welcome by **Sluts From Dana!, ${member}`);
      
     });
 

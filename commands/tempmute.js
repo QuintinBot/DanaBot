@@ -5,33 +5,33 @@ module.exports.run = async (client, message, args) => {
 
     // !tempmute persoon tijd (h,m,s).
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry, jij kan dit niet");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You can't do this.");
 
-    if (!args[0]) return message.reply("Geen gebruiker opgegeven.");
+    if (!args[0]) return message.reply("Give a reason.");
 
-    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("No perms");
 
     var mutePerson = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
-    if (!mutePerson) return message.reply("Kan deze gebruiker niet vinden.");
+    if (!mutePerson) return message.reply("Can't find this user.");
 
-    if (mutePerson.hasPermission("MANAGE_MESSAGES")) return message.reply("Sorry je kunt deze gebruiker niet muten");
+    if (mutePerson.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't mute this user");
 // dit is de mute rol
-    var muteRole = message.guild.roles.cache.get('868980678136569876');
-    if (!muteRole) return message.channel.send("De rol **Muted** bestaat niet.");
+    var muteRole = message.guild.roles.cache.get('876590972509761576');
+    if (!muteRole) return message.channel.send("The roll **Muted** does not exist.");
 
     var muteTime = args[1];
 
-    if (!muteTime) return message.channel.send("Geen tijd opgegeven");
+    if (!muteTime) return message.channel.send("No time given.");
 
     await (mutePerson.roles.add(muteRole.id));
-    message.channel.send(`${mutePerson} is gemuted voor ${muteTime}`);
+    message.channel.send(`${mutePerson} got muted for ${muteTime}`);
 
     setTimeout(() => {
 
         mutePerson.roles.remove(muteRole.id);
 
-        message.channel.send(`${mutePerson} is geunmute`);
+        message.channel.send(`${mutePerson} is muted`);
 
     }, ms(muteTime));
 

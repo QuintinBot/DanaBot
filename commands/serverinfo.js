@@ -4,9 +4,9 @@ module.exports.run = async (client, message, args) => {
 
     var serverEmbed = new discord.MessageEmbed()
             .setColor("#d18cd7")
-            .addField("Bot naam", client.user.username)
-            .addField("Je bent deze server gejoined op", message.member.joinedAt)
-            .addField("Totaal memebers", message.guild.memberCount);
+            .addField("Bot name", client.user.username)
+            .addField("You joined the server on", message.member.joinedAt)
+            .addField("Total members", message.guild.memberCount);
 
         return message.channel.send(serverEmbed);
 

@@ -4,16 +4,16 @@ module.exports.run = async (client, message, args) => {
 
     // !announcement title | bericht | kleur | kanaal
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry jij kan dit niet");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry, you can't do this!");
 
     var seperator = "|";
 
     if (args[0] == null) {
 
         var embed = new discord.MessageEmbed()
-            .setTitle("Gebruik")
+            .setTitle("Use")
             .setColor("#d18cd7")
-            .setDescription(`Maak een announcement door gebruik te maken van: \n !announcement titel ${seperator} bericht ${seperator} kleur ${seperator} kanaal`);
+            .setDescription(`Make a announcement with: \n !announcement titel ${seperator} bericht ${seperator} kleur ${seperator} kanaal`);
 
         return message.reply(embed);
 
@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
     var options = {
 
         titel: argsList[0],
-        bericht: argsList[1] || "Geen inhoud meegegeven",
+        bericht: argsList[1] || "No content included",
         kleur: argsList[2].trim(),
         kanaal: argsList[3].trim()
 
@@ -40,7 +40,7 @@ module.exports.run = async (client, message, args) => {
         .setTimestamp();
 
     var channel = message.member.guild.channels.cache.find(channels => channels.name === options.kanaal);
-    if (!channel) return message.reply("Dit kanaal bestaat niet");
+    if (!channel) return message.reply("There is no channel");
 
     channel.send(announceEmbed);
 

@@ -4,14 +4,14 @@ module.exports.run = async(bot, message, args) =>{
 
     try{
 //var text = alle regels. \n = een nieuwe regel.
-        var text = "**Welkom bij de commands van Pieter Knolraap Bot!** \n \n **__Normale Commands__** \n 1. -info = Info van de Knolraap Army server. \n 2. -serverinfo = Geeft aan wanneer je de Knolraap Army bent gejoined. \n 3. -ping = Je ping in de server. \n 4. -leden = Je ziet hoeveel mensen in de Knolraap Army zitten.  \n \n **__Spelletjes__** \n 1. -dobbel = Lekker dobbelen! \n 2. -kopofmunt = Weddenschap doen? Wat kies je... Kop of Munt? \n 3. -meme = Lekker kijken naar meme's! \n \n **__Admin Commands__**  \n 1. -tempmute = Iemand muten voor een bepaalde tijd. \n 2. -warn = Iemand waarschuwen. \n 3. -clear = Berichten weghalen. \n 4. -announcement = Een aankonding doen. \n 5. -kick = Iemand kicken uit Knolraap Army. \n 6. -prefix = De prefix veranderen! \n 7. -lockdown = Jongens! Het kanaal gaat dicht... \n 8. -clear = Paar berichten verwijderen. \n 9. -poll = Een poll aanmaken. \n 10. -unlock = Het kanaal gaat weer open!";
+        var text = "**Welcome by the commands from Dana's Stripper Bot!** \n \n **__Normal Commands__**  \n 1. -serverinfo = Indicates when you **Sluts From Dana** have been joined. \n 2. -ping = Your ms/ping. \n 3. -people = You can see how much people are in **Sluts From Dana**.  \n \n **__Games__** \n 1. -dice = Have fun, and dice nicely! \n 2. -headofcoin = What do you choose? Head or tail?? \n 3. -meme = Enjoy watching meme's! \n \n **__Admin Commands__**  \n 1. -tempmute = Muting someone for a certain time. \n 2. -warn = Warn a person. \n 3. -clear = Delete message's. \n 4. -announcement = Pop a announcement. \n 5. -kick = Kick someone of **Sluts From Dana**. \n 6. -prefix = Change the prefix of the bot! \n 7. -lockdown = Stop the channel! \n 8. -poll = Make a poll. \n 9. -unlock = Unlock the channel!";
         
         message.author.send(text);
 
-        message.reply("Pssstt... Ik zit in je dm!")
+        message.reply("Hey, you got a mail! :eyes:")
 
     }catch(error){
-        message.reply("Er iets fouts gegaan!");
+        message.reply("There is something wrong!");
     }
 
 

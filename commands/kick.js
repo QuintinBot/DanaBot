@@ -4,33 +4,33 @@ const timeSpan = ms("100 days");
 
 module.exports.run = async(bot, message, args) =>{
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You can't do this.");
  
-    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("You don't got perms.");
 
-    if (!args[1]) return message.reply("Geen gebruiker opgegeven.");
+    if (!args[1]) return message.reply("No user?.");
 
-    if (!args[2]) return message.reply("Geef een redenen op.");
+    if (!args[2]) return message.reply("Give a reason.");
 
     var kickUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
 
     var reason = args.slice(2).join(" ");
 
-    if (!kickUser) return message.reply("Kan deze gebruiker niet vinden.");
+    if (!kickUser) return message.reply("Can't find this person.");
 
     var embed = new discord.MessageEmbed()
         .setColor("#ff0000")
         .setThumbnail(kickUser.user.displayAvatarURL)
         .setFooter(message.member.displayName, message.author.displayAvatarURL)
         .setTimestamp()
-        .setDescription(`** Gekickt:** ${kickUser} (${kickUser.id})
-        **Gekickt door:** ${message.author}
-        **Redenen: ** ${reason}`);
+        .setDescription(`** Kicked:** ${kickUser} (${kickUser.id})
+        **Kicked by:** ${message.author}
+        **Reason: ** ${reason}`);
 
     var embedPrompt = new discord.MessageEmbed()
         .setColor("#ff0000")
-        .setAuthor("Liever reageren binnen 30 sec.")
-        .setDescription(`Wil je ${kickUser} kicken?`);
+        .setAuthor("Respond in 30 seconds.")
+        .setDescription(`Do you want to kick ${kickUser}?`);
 
 
     message.channel.send(embedPrompt).then(async msg => {
@@ -58,7 +58,7 @@ module.exports.run = async(bot, message, args) =>{
             msg.delete();
 
             kickUser.kick(reason).catch(err => {
-                if (err) return message.channel.send(`Er is iets foutgegaan.`);
+                if (err) return message.channel.send(`Something is wrong?`);
             });
 
             message.reply(embed);
@@ -67,7 +67,7 @@ module.exports.run = async(bot, message, args) =>{
 
             msg.delete();
 
-            message.reply("Kick geanuleerd").then(m => m.delete(5000));
+            message.reply("The **Kick** Has been cancelled").then(m => m.delete(5000));
 
         }
 
