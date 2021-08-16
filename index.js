@@ -93,7 +93,7 @@ client.on("message", async message => {
  
     var command = messageArray[0];
 
-    RandomXp();
+    RandomXp(message);
 
     if(!message.content.startsWith(prefix)) return;
 
@@ -125,12 +125,30 @@ client.on("messageDelete", messageDeleted => {
 
 });
 
-function RandomXp() {
+function RandomXp(message) {
 
     var randomNumber = Math.floor(Math.random() * 15) + 1;
 
-    console.log(randomNumber);
+    var idUser = message.author.id;
 
+    if(!levelFile[idUser]){
+        levelFile[idUser] = {
+            xp: 0,
+            level: 0
+        }
+    }
+
+    levelFile[idUser].xp += randomNumber;
+
+    var levelUser = levelFile[idUser].level;
+    var xpUser = levelFile[idUser].xp;
+
+    var nextLevelXp = levelUser * 300;
+
+    if(nextLevelXp == 0) nextLevelXp = 100;
+
+    
+    
 }
 
 client.login(process.env.token);
