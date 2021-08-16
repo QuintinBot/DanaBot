@@ -1,6 +1,6 @@
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry, jij kan dit niet");
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You can't do this!");
 
     await message.channel.overwritePermissions([
 
@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 
     ]);
 
-    message.channel.send("**LOCKDOWN**! Dit kanaal is tijdelijk gesloten!")
+    message.channel.send("**LOCKDOWN**! This channel has been closed!")
 
 }
 

@@ -3,9 +3,9 @@ const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
 
-    if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Sorry, je kan dit command niet gebruiken.");
+    if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("You can't use this command.");
 
-    if(!args[0]) return message.reply("Gebruikt het command goed!");
+    if(!args[0]) return message.reply("Use the command good!");
 
     var prefixes = JSON.parse(fs.readFileSync("./prefixes.json"));
 
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
     var embed = new discord.MessageEmbed()
     .setTitle("Prefix")
     .setColor("#ff0000")
-    .setDescription(`De prefix is aangepast naar ${args[0]}`);
+    .setDescription(`The prefix has changed to ${args[0]}`);
 
     message.channel.send(embed);
     
