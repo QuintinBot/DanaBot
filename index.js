@@ -147,7 +147,15 @@ function RandomXp(message) {
 
     if(nextLevelXp == 0) nextLevelXp = 100;
 
-    
+    if(xpUser >= nextLevelXp){
+
+        levelFile[idUser].level += 1;
+
+        fs.writeFile("./date/levels.json", JSON.stringify(levelFile), err => {
+            if(err) console.log(err);
+        });
+
+    }
     
 }
 
