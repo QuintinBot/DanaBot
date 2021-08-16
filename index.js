@@ -131,7 +131,7 @@ function RandomXp(message) {
 
     var idUser = message.author.id;
 
-    if(!levelFile[idUser]){
+    if (!levelFile[idUser]) {
         levelFile[idUser] = {
             xp: 0,
             level: 0
@@ -154,6 +154,13 @@ function RandomXp(message) {
         fs.writeFile("./date/levels.json", JSON.stringify(levelFile), err => {
             if(err) console.log(err);
         });
+
+        var embedLevel = new discord.MessageEmbed()
+        .setDescription("**Level Up!**")
+        .setColor("PINK")
+        .setField("Nieuw Level: ", levelFile[idUser].level)
+        .setFooter();
+        message.channel.send(embedLevel);
 
     }
     
