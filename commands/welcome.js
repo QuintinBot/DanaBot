@@ -1,6 +1,4 @@
 const discord = require("discord.js");
-const { WelcomerZerotwo } = require("zerotwo-welcomer");
-const welcome = new WelcomerZerotwo();
 
 Welcome(client, {
   "numericserverid1": {
