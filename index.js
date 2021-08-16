@@ -1,5 +1,8 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
+const database = require("./database.json");
+const mysql = require("mysql");
+const levelFile = require("./data/levels.json");
 
 
 const fs = require("fs");
@@ -73,8 +76,6 @@ client.on("message", async message => {
 
     }
 
-    
-
     var prefixes = JSON.parse(fs.readFileSync("./prefixes.json"));
 
     if(!prefixes[message.guild.id]){
@@ -92,6 +93,10 @@ client.on("message", async message => {
     var messageArray = message.content.split(" ");
  
     var command = messageArray[0];
+
+    RandomXp();
+
+    if(!message.content.startsWith(prefix)) return;
 
     var arguments = messageArray.slice(1);
 
@@ -120,5 +125,13 @@ client.on("messageDelete", messageDeleted => {
 
 
 });
+
+function RandomXp() {
+
+    var randomNumber = Math.floor(Math.random() * 15) + 1;
+
+    console.log(randomNumber);
+
+}
 
 client.login(process.env.token);
